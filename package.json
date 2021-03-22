@@ -1,6 +1,6 @@
 {
     "name": "pip-services3-expressions-nodex",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Tokenizers, parsers and expression calculators for Pip.Services in Node.js / ES2017",
     "contributors": [
@@ -33,8 +33,6 @@
         "retest": "tsc && mocha -t 10000 -R spec -u tdd --recursive ./obj/test"
     },
     "dependencies": {
-        "async": "^3.2.0",
-        "lodash": "^4.17.21",
         "pip-services3-commons-nodex": "^1.0.0"
     },
     "devDependencies": {
