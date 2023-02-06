@@ -12,22 +12,6 @@ const CsvQuoteState_1 = require("./CsvQuoteState");
  */
 class CsvTokenizer extends AbstractTokenizer_1.AbstractTokenizer {
     /**
-     * Constructs this object with default parameters.
-     */
-    constructor() {
-        super();
-        this._fieldSeparators = [','.charCodeAt(0)];
-        this._quoteSymbols = ['"'.charCodeAt(0)];
-        this._endOfLine = "\n\r";
-        this.numberState = null;
-        this.whitespaceState = null;
-        this.commentState = null;
-        this.wordState = new CsvWordState_1.CsvWordState(this.fieldSeparators, this.quoteSymbols);
-        this.symbolState = new CsvSymbolState_1.CsvSymbolState();
-        this.quoteState = new CsvQuoteState_1.CsvQuoteState();
-        this.assignStates();
-    }
-    /**
      * Separator for fields in CSV stream.
      */
     get fieldSeparators() {
@@ -111,6 +95,22 @@ class CsvTokenizer extends AbstractTokenizer_1.AbstractTokenizer {
         for (let quoteSymbol of this.quoteSymbols) {
             this.setCharacterState(quoteSymbol, quoteSymbol, this.quoteState);
         }
+    }
+    /**
+     * Constructs this object with default parameters.
+     */
+    constructor() {
+        super();
+        this._fieldSeparators = [','.charCodeAt(0)];
+        this._quoteSymbols = ['"'.charCodeAt(0)];
+        this._endOfLine = "\n\r";
+        this.numberState = null;
+        this.whitespaceState = null;
+        this.commentState = null;
+        this.wordState = new CsvWordState_1.CsvWordState(this.fieldSeparators, this.quoteSymbols);
+        this.symbolState = new CsvSymbolState_1.CsvSymbolState();
+        this.quoteState = new CsvQuoteState_1.CsvQuoteState();
+        this.assignStates();
     }
 }
 exports.CsvTokenizer = CsvTokenizer;

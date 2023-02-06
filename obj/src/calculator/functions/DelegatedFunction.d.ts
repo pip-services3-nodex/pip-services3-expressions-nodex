@@ -5,7 +5,7 @@ import { IFunction } from "./IFunction";
 /**
  * Defines a delegate to implement a function
  */
-export declare type FunctionCalculator = (params: Variant[], variantOperations: IVariantOperations) => Promise<Variant>;
+export type FunctionCalculator = (params: Variant[], variantOperations: IVariantOperations) => Promise<Variant>;
 export declare class DelegatedFunction implements IFunction {
     private _name;
     private _calculator;
